@@ -1,0 +1,62 @@
+﻿  console.log
+    [DB] SQLite initialised at C:\Users\Yash Srivastava\OneDrive\Desktop\Manah\manah-backend\data\manah.db
+
+      at log (src/config/db.js:122:13)
+
+node : (node:1852) ExperimentalWarning: 
+SQLite is an experimental feature and might 
+change at any time
+At line:1 char:1
++ node run-test.js > chat_out.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ( 
+   (node:1852) Exp...nge at any time:String)  
+   [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandEr 
+   ror
+ 
+(Use `node --trace-warnings ...` to show 
+where the warning was created)
+[0mPOST /api/auth/signup [32m201[0m 157.474 ms - 472[0m
+[0mPOST /api/chat/session [32m201[0m 3.635 ms - 77[0m
+[0mPOST /api/chat/session [32m201[0m 2.433 ms - 68[0m
+[0mPOST /api/chat/session [33m401[0m 0.603 ms - 35[0m
+[0mGET /api/chat/sessions [32m200[0m 1.334 ms - 233[0m
+[0mPOST /api/chat/message [32m200[0m 830.310 ms - 141[0m
+[0mPOST /api/chat/message [33m400[0m 1.528 ms - 46[0m
+[0mPOST /api/chat/message [33m400[0m 1.373 ms - 46[0m
+[0mPOST /api/chat/message [32m200[0m 3.296 ms - 728[0m
+[0mPOST /api/chat/message [32m200[0m 831.430 ms - 201[0m
+[0mGET /api/chat/history?sessionId=9 [32m200[0m 1.253 ms - 687[0m
+[0mGET /api/chat/history [33m400[0m 0.550 ms - 42[0m
+PASS tests/chat.test.js
+  POST /api/chat/session
+    ΓêÜ should create a new chat session (12 
+ms)
+    ΓêÜ should return 401 without token (5 ms)
+  GET /api/chat/sessions
+    ΓêÜ should list user sessions (7 ms)
+  POST /api/chat/message
+    ΓêÜ should return an AI reply (mock) (836 
+ms)
+    ΓêÜ should return 400 if sessionId is 
+missing (8 ms)
+    ΓêÜ should return 400 if message is 
+missing (9 ms)
+  Crisis detection ΓÇö POST /api/chat/message
+    ΓêÜ should intercept crisis keywords and 
+return helpline info (11 ms)
+    ΓêÜ should NOT trigger crisis for normal 
+messages (839 ms)
+  GET /api/chat/history
+    ΓêÜ should return message history for a 
+session (8 ms)
+    ΓêÜ should return 400 if sessionId is 
+missing (5 ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        3.91 s, estimated 4 s
+Ran all test suites matching 
+/tests\\chat.test.js/i.
